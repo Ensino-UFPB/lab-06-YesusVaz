@@ -54,13 +54,23 @@ const mensagensDeErro = {
     },
     estado: {
         valueMissing: 'O campo de estado não pode estar vazio.'
+    },
+    telefone: {
+        valueMissing: 'O campo de telefone não pode estar vazio.',
+        patternMismatch: 'O número de telefone não está no formato correto. Exemplo: (83)99131-3434'
+    },
+    instagram: {
+        valueMissing: 'O campo de Instagram não pode estar vazio.',
+        customError: 'O Instagram deve começar com "@"'
     }
 }
 
 const validadores = {
-    dataNascimento:input => validaDataNascimento(input),
-    cpf:input => validaCPF(input),
-    cep:input => recuperarCEP(input)
+    dataNascimento: input => validaDataNascimento(input),
+    cpf: input => validaCPF(input),
+    cep: input => recuperarCEP(input),
+    telefone: input => validaTelefone(input),
+    instagram: input => validaInstagram(input)
 }
 
 function mostraMensagemDeErro(tipoDeInput, input) {
